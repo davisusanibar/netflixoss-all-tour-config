@@ -2,10 +2,10 @@ info:
   description: Spring Cloud Samples - For my personal configuration
   url: https://github.com/davisusanibar/netflixoss-all-tour-config
 eureka:
-  password: '{cipher}AQBdTe9vjgOqANyfi+Ke5HYmhFJnuvsGJ+8FOqLgdMdFInJkVRzy9XngylNp9KlX2lwPI13jT7ceDjBs9w4B6A15akQTHHP1q9rWwMcLtVCCKGFgvXSgQF+WWIItxBmIDGG4bSgDYZ6XQWl66T84PxjTBygErpmAjn+X2BWdtWtVmjXzpMQMaHGpiyLPoGIQYF4j9ZGpl16Jx79+j6et6LStksrT3WxQuanhZwIkqZ827+2mlUB3kd5ocW7R0vC3JMGVZlGNfqYQwJIhSJ19lrq4gxm/zbGroYonW3QSHTiRlhlvOdovEua/0dCl6+s0iEHYZCBllr7jikEWmS5Px7U2TG8/eQkjR8pUbSN6OE+OI2ZZUCNOT+mi75ZeeN1OtdQ='
+  password: '{cipher}AQA49kaJxMYc2Aq1txPRk8LVzeFKLwWycX1RnDcOw9k4nyU7zqVSoSCIIS7ogFdMaonUkacAXv5xBixf3aqiu/cR+goz1M04E6NL1cZHMBk18v/6cTSXODBhVz8OT7rD2/R38xB27Yo9qYYWwArNHk4qjiCw4jg9e+sKRuyzkkneRPlycLZT4/FrbZLHaA9CRxwmjnIMMneTfuf0fsChjgORzO4X+WYD0lWI4xMo5pIHt8LjvFNthZumWDJO2EURvxTOOvS3YTtbg65p3yUHvD8O1Nukmz/mtzUVY5NVZfuCEu5p+wGv/ew0NX5sepZY/Fj+Bs9XKyHHBTLA5cZ5nzzm6GYOQ2moZ4dU6AjcebbLrWcyNdDRU7ORgpMoYT9Tfic='
   client:
     serviceUrl:
-      defaultZone: http://user:${eureka.password:}@localhost:8585/eureka/
+      defaultZone: http://adminusereureka:${eureka.password:}@localhost:8585/eureka/
 
 ---
 spring:
@@ -49,4 +49,4 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://${EUREKA_1_PORT_8761_TCP_ADDR:localhost}:8585/eureka/      
+      defaultZone: http://${EUREKA_1_PORT_8761_TCP_ADDR:localhost}:8761/eureka/
