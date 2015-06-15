@@ -12,12 +12,12 @@ spring:
   profiles: cloud
   cloud:
     config:
-      uri: ${vcap.services.${PREFIX:}tour-config-server.credentials.uri:http://user:password@${PREFIX:}tour-config-server.${application.domain:cfapps.io}}
+      uri: ${vcap.services.${PREFIX:}tour-config-server.credentials.uri:http://adminuser:adminuser@${PREFIX:}tour-config-server.${application.domain:cfapps.io}}
 
 security:
   user:
     name: adminuser
-    password: "{cipher}AQAc9OSnvjINdppzekVwaOXVVedkKbCkCdNgQzW3ltj4qbql8HoevCH0/VWZdjpdVTqiYKq8gjm62Kne2o16jiVosG/PyhDMeAMh0Z411ZK5jVtY40TPI+dTNHBYbqmNffF/cFArRBvVa5+tt9LP0N8khbpML7OHJ0s/S932S+rgHN36cAsIN4FwpVdJgOeb4R0ahZnv7YUD9KbPh+KsYPQGNbeXLGIGz3b5W8hj0IV1OzSovTFlqjgAvf292XTD/LuXNoJ8cvzmVQqzdpDOSXG1IwJ5KWgq+PXiRHCul1Q5yF+xRyB46T3DRsfxKq0im+E1U1LN1HGJ9Vulss2Ck1lHl26LmJrbCSqeQtBVoDg6JelWSmQO48FY9h2vMKrCKv0="          
+    password: adminuser          
 
 oauth2:
   client:
@@ -33,13 +33,13 @@ application:
 endpoints:
   restart: enabled
 eureka:
-  password: password
+  password: adminusereureka
   instance:
     hostname: ${vcap.application.uris[0]:localhost}
     nonSecurePort: 80
   client:
     serviceUrl:
-      defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:${eureka.password:}@${PREFIX:}eureka.${application.domain:cfapps.io}}/eureka/
+      defaultZone: ${vcap.services.${PREFIX:}tour-eureka-server.credentials.uri:http://adminusereureka:${eureka.password:}@${PREFIX:}tour-eureka-server.${application.domain:cfapps.io}}/eureka/
 
 ---
 spring:
